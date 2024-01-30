@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="c.css">
+        <title >first page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <style>
+            *{margin: 0;padding:0px}
+            .icons li {
+                background: none repeat scroll 0 0 #f6f3f3;
+                height: 7px;
+                width: 7px;
+                line-height: 0;
+                list-style: none outside none;
+                margin-right: 15px;
+                margin-top: 3px;
+                vertical-align: top;
+                border-radius:50%;
+                pointer-events: none;
+            }
+
+            .btn-left {
+                left: 0.4em;
+            }
+
+            .btn-right {
+                right: 0.4em;
+            }
+
+            .btn-left, .btn-right {
+                position: absolute;
+                top: 0.24em;
+            }
+            .dropdown {
+                position: absolute;
+                display: inline-block;
+                right: 0.4em;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: relative;
+                margin-top: 40px;
+                background-color: #386fd7;
+                min-width: 80px;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: rgb(234, 237, 237);
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown a:hover {background-color: #370adb}
+
+            .show {display:block;}
+
+        </style>
+        <script>
+            function changeLanguage(language) {
+                var element = document.getElementById("url");
+                element.value = language;
+                element.innerHTML = language;
+            }
+
+            function showDropdown() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+<body>
+    <div class="header">
+
+        <!-- three dot menu -->
+        <div class="dropdown">
+            <!-- three dots -->
+            <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!-- menu -->
+            <div id="myDropdown" class="dropdown-content">
+                <a href="home.html">Home</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <video autoplay loop muted >
+            <source src="metaverrse.mp4" type="video/mp4">
+            <source src="metaverrse.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+     <div class="content">
+        <h1>3D Virtual Multiverse</h1>
+     </div>   
+    </div>
+   
+
+    </div>
+</body>    
+</html>
